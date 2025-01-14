@@ -54,6 +54,27 @@ const TimeZoneStatus = () => {
   const [times, setTimes] = useState({});
   const [weatherData, setWeatherData] = useState({});
 
+    useEffect(() => {
+    const fetchWeatherData = async () => {
+      const cities = ['Kolkata', 'Paris', 'New York', 'London', 'Tokyo', 'Sydney'];
+      const weatherUpdates = await Promise.all(
+        cities.map(async (city) => {
+          const temp = await getWeather(city);
+          return { city, temp };
+        })
+      );
+
+      setWeatherData(
+        weatherUpdates.reduce((acc, { city, temp }) => {
+          acc[city] = temp;
+          return acc;
+        }, {})
+      );
+    };
+
+    fetchWeatherData();
+  }, []);
+
 
 
   return (

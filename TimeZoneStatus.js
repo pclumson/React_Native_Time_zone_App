@@ -5,6 +5,12 @@ import { View, Text, StyleSheet, ImageBackground } from 'react-native';
 const safeString = (value) => (value !== undefined && value !== null ? String(value) : 'N/A');
 
 // Function to get the current time in a specific time zone
+const getTime = (timeZone) =>
+  new Date().toLocaleString('en-US', {
+    timeZone,
+    timeStyle: 'medium',
+    hourCycle: 'h12',
+  });
 
 
 // Function to get weather data for a city with error handling

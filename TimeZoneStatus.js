@@ -33,6 +33,14 @@ const getWeather = async (city) => {
   }
 };
 
+const TimeBox = ({ city, time, weather }) => (
+  <View style={styles.timebox}>
+    <Text style={styles.header}>{safeString(city)}</Text>
+    <Text style={styles.time}>{safeString(time)}</Text>
+    <Text style={styles.weather}>{`Temp: ${safeString(weather)}°C`}</Text>
+  </View>
+);
+
 
 
 const TimeZoneStatus = () => {

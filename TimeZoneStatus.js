@@ -102,15 +102,8 @@ const TimeZoneStatus = () => {
       style={styles.backgroundImage}
       resizeMode="cover"
     >
-
-
       <Text style={styles.heading}>Planet Pulse: Time & Weather</Text>
-      <View style={styles.container}><TimeBox city="India" time={indiaTime} weather={weatherData['Kolkata']} style={styles.clock1} />
-      <TimeBox city="Paris" time={parisTime} weather={weatherData['Paris']} style={styles.clock2} />
-      <TimeBox city="New York" time={newYorkTime} weather={weatherData['New York']} style={styles.clock3} />
-      <TimeBox city="London" time={londonTime} weather={weatherData['London']} style={styles.clock4} />
-      <TimeBox city="Tokyo" time={tokyoTime} weather={weatherData['Tokyo']} style={styles.clock5} />
-      <TimeBox city="Sydney" time={sydneyTime} weather={weatherData['Sydney']} style={styles.clock6} />
+      <View style={styles.container}>
       </View>
     </ImageBackground>
 

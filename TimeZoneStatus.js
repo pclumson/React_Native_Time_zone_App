@@ -72,6 +72,20 @@ const TimeZoneStatus = () => {
       );
     };
 
+    const updateTimes = () => {
+      setTimes({
+        India: getTime('Asia/Kolkata'),
+        Paris: getTime('Europe/Paris'),
+        NewYork: getTime('America/New_York'),
+        London: getTime('Europe/London'),
+        Tokyo: getTime('Asia/Tokyo'),
+        Sydney: getTime('Australia/Sydney'),
+      });
+    };
+    updateTimes(); // Initial call
+    const interval = setInterval(updateTimes, 1000); // Update every second
+    return () => clearInterval(interval); // Clean up on unmount
+
     fetchWeatherData();
   }, []);
 

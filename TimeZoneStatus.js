@@ -38,14 +38,17 @@ const TimeBox = ({ city, time, weather }) => (
     <Text style={styles.header}>{safeString(city)}</Text>
     <Text style={styles.time}>{safeString(time)}</Text>
     <Text style={styles.weather}>{`Temp: ${safeString(weather)}°C`}</Text>
+
+    <TimeBox city="India" time={indiaTime} weather={weatherData['Kolkata']} style={styles.clock1} />
+    <TimeBox city="Paris" time={parisTime} weather={weatherData['Paris']} style={styles.clock2} />
+    <TimeBox city="New York" time={newYorkTime} weather={weatherData['New York']} style={styles.clock3} />
+    <TimeBox city="London" time={londonTime} weather={weatherData['London']} style={styles.clock4} />
+    <TimeBox city="Tokyo" time={tokyoTime} weather={weatherData['Tokyo']} style={styles.clock5} />
+    <TimeBox city="Sydney" time={sydneyTime} weather={weatherData['Sydney']} style={styles.clock6} />
+
+
   </View>
 
- <TimeBox city="India" time={indiaTime} weather={weatherData['Kolkata']} style={styles.clock1} />
-        <TimeBox city="Paris" time={parisTime} weather={weatherData['Paris']} style={styles.clock2} />
-        <TimeBox city="New York" time={newYorkTime} weather={weatherData['New York']} style={styles.clock3} />
-        <TimeBox city="London" time={londonTime} weather={weatherData['London']} style={styles.clock4} />
-        <TimeBox city="Tokyo" time={tokyoTime} weather={weatherData['Tokyo']} style={styles.clock5} />
-        <TimeBox city="Sydney" time={sydneyTime} weather={weatherData['Sydney']} style={styles.clock6} />
 );
 
 
@@ -99,12 +102,13 @@ const TimeZoneStatus = () => {
       style={styles.backgroundImage}
       resizeMode="cover"
     >
-      <View style={styles.overlay} />
       <Text style={styles.heading}>Planet Pulse: Time & Weather</Text>
-      <View style={styles.container}>
-      
-      </View>
+      <View style={styles.container}></View>
     </ImageBackground>
+
+
+
+
   );
 };
 
